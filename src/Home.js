@@ -1,6 +1,18 @@
 //type sfc to get Stateless Function Component
-const Home = () => {
+
+import { useState } from "react";
+
+const Home = function () {
+  //let name = "mario";
+
+  //useState - HOOKS
+  const [name, setName] = useState("wario");
+  const [age, setAge] = useState(25);
+
   const handleClick = function (e) {
+    setName("luigi");
+    setAge(38);
+
     console.log("Hello Ninja!", e);
   };
 
@@ -11,6 +23,9 @@ const Home = () => {
   return (
     <div className="home">
       <h2>Homepage</h2>
+      <p>
+        {name} is {age} years old
+      </p>
       <button onClick={handleClick}>click Me</button>
       <button
         onClick={function (e) {

@@ -1,5 +1,5 @@
 //type sfc to get Stateless Function Component
-const Navbar = () => {
+const Navbar = function () {
   return (
     <nav className="navbar">
       <h1>The Dojo Blog</h1>
