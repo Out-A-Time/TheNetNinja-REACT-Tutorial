@@ -1,39 +1,40 @@
 //type sfc to get Stateless Function Component
-
 import { useState } from "react";
 
 const Home = function () {
-  //let name = "mario";
-
-  //useState - HOOKS
-  const [name, setName] = useState("wario");
-  const [age, setAge] = useState(25);
-
-  const handleClick = function (e) {
-    setName("luigi");
-    setAge(38);
-
-    console.log("Hello Ninja!", e);
-  };
-
-  const handleClickAgain = function (name, e) {
-    console.log("Hello " + name, e.target);
-  };
+  //useState - HOOK
+  const [blogs, setBlogs] = useState([
+    {
+      title: "My new website in React",
+      body: "loremIpsum...",
+      author: "Mario",
+      id: 1,
+    },
+    {
+      title: "Hello from UpsideDown",
+      body: "loremIpsum...",
+      author: "Luigi",
+      id: 2,
+    },
+    {
+      title: "Learning React is fun",
+      body: "loremIpsum...",
+      author: "Wario",
+      id: 3,
+    },
+  ]);
 
   return (
     <div className="home">
-      <h2>Homepage</h2>
-      <p>
-        {name} is {age} years old
-      </p>
-      <button onClick={handleClick}>click Me</button>
-      <button
-        onClick={function (e) {
-          handleClickAgain("max", e);
-        }}
-      >
-        click Me aGAIN
-      </button>
+      {blogs.map(function (blog) {
+        return (
+          <div className="blog-preview" key={blog.id}>
+            <h2>{blog.title}</h2>
+            <p>Written by {blog.author}</p>
+          </div>
+        );
+      })}
+      ;
     </div>
   );
 };
