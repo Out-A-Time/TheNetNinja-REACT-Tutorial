@@ -34,7 +34,6 @@ const Home = function () {
           </div>
         );
       })}
-      ;
     </div>
   );
 };
