@@ -1,5 +1,6 @@
 //type sfc to get Stateless Function Component
 import { useState } from "react";
+import BlogList from "./BlogList";
 
 const Home = function () {
   //useState - HOOK
@@ -24,16 +25,25 @@ const Home = function () {
     },
   ]);
 
+  const handleDelete = function (id) {
+    // const newBlogs = blogs.filter((blog) => blog.id !== id);  as arrow function-FILTER-when true stays, when false is filtered out from the newBlogs
+    const newBlogs = blogs.filter(function (blog) {
+      if (blog.id !== id) {
+        return true;
+      }
+      return false;
+    });
+    setBlogs(newBlogs);
+  };
+
   return (
     <div className="home">
-      {blogs.map(function (blog) {
-        return (
-          <div className="blog-preview" key={blog.id}>
-            <h2>{blog.title}</h2>
-            <p>Written by {blog.author}</p>
-          </div>
-        );
-      })}
+      {/* Passing Props to BlogList function */}
+      <BlogList
+        blogsProp={blogs}
+        titleProp={"All Posts"}
+        handleDeleteProp={handleDelete}
+      />
     </div>
   );
 };
