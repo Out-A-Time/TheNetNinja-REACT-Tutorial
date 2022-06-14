@@ -1,6 +1,6 @@
 const BlogList = function ({ blogsProp, titleProp, handleDeleteProp }) {
-  //   const blogs = props.blogsProp;
-  //   const title = props.titleProp;
+  //   const blogs = props.blogsProp; - before destructurizing
+  //   const title = props.titleProp; - before destructurizing
 
   return (
     <div className="blog-list">
