@@ -1,0 +1,22 @@
+{
+  "blogs": [
+    {
+      "title": "My new website in React",
+      "body": "loremIpsum...",
+      "author": "Mario",
+      "id": 1
+    },
+    {
+      "title": "Hello from UpsideDown",
+      "body": "loremIpsum...",
+      "author": "Luigi",
+      "id": 2
+    },
+    {
+      "title": "Learning React is fun",
+      "body": "loremIpsum...",
+      "author": "Wario",
+      "id": 3
+    }
+  ]
+}

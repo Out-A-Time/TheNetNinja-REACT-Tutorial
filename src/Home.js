@@ -75,3 +75,6 @@ const Home = function () {
 };
 
 export default Home;
+
+//To run the JSON Server open second terminal and run
+//command "npx json-server --watch data/db.json --port8000"
