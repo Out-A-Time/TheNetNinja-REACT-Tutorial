@@ -1,4 +1,4 @@
-const BlogList = function ({ blogsProp, titleProp, handleDeleteProp }) {
+const BlogList = function ({ blogsProp, titleProp }) {
   //   const blogs = props.blogsProp; - before destructurizing
   //   const title = props.titleProp; - before destructurizing
 
@@ -9,14 +9,8 @@ const BlogList = function ({ blogsProp, titleProp, handleDeleteProp }) {
         return (
           <div className="blog-preview" key={blog.id}>
             <h2>{blog.title}</h2>
+            <p>{blog.body}</p>
             <p>Written by {blog.author}</p>
-            <button
-              onClick={function () {
-                handleDeleteProp(blog.id);
-              }}
-            >
-              Delete Blog
-            </button>
           </div>
         );
       })}
