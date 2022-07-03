@@ -9,7 +9,8 @@ const useFetch = function (url) {
   //add empty 'dependency array' as second argument to avoid infinite loop -> USECASE: when we want to run function one time during first render
   useEffect(
     function () {
-      fetch(url)
+      const abortCont = new AbortController();
+      fetch(url, { signal: abortCont.signal })
         .then(function (res) {
           if (!res.ok) {
             throw Error("Yo! We could not fetch the data for that resource");
@@ -23,10 +24,17 @@ const useFetch = function (url) {
         })
         //catching the network error
         .catch(function (err) {
-          setIsLoading(false);
-          setError(err.message);
+          if (err.name === "AbortError") {
+          } else {
+            setIsLoading(false);
+            setError(err.message);
+          }
         });
+      return function () {
+        abortCont.abort();
+      };
     },
+
     [url]
   );
   return { data, isLoading, error };
