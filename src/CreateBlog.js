@@ -1,7 +1,7 @@
 const CreateBlog = function () {
   return (
     <div className="create">
-      <h2>Adda New Blog</h2>
+      <h2>Add a New Blog</h2>
     </div>
   );
 };
