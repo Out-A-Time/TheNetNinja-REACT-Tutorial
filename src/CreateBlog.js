@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CreateBlog = function () {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("wario");
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = function (event) {
     event.preventDefault(); //prevents page being refreshed when submit
@@ -19,6 +21,7 @@ const CreateBlog = function () {
     }).then(function () {
       console.log("new blog added");
       setIsLoading(false);
+      navigate("/");
     });
   };
 

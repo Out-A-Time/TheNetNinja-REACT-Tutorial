@@ -25,16 +25,34 @@
       "id": 4
     },
     {
-      "title": "asdf",
-      "body": "fdf",
+      "title": "Does useNavigate works?",
+      "body": "Let's find out after submitting new post!",
       "author": "yoshi",
-      "id": 5
+      "id": 7
     },
     {
-      "title": "asdf",
-      "body": "fdf",
-      "author": "yoshi",
-      "id": 6
+      "title": "useNavigate didn't work.",
+      "body": "But after few changes in the codes.....",
+      "author": "wario",
+      "id": 8
+    },
+    {
+      "title": "It think it worked!",
+      "body": "woo hoo, but let's try another approach in the next post.",
+      "author": "wario",
+      "id": 9
+    },
+    {
+      "title": "Let's see....",
+      "body": "-1 page back? Testing. If yes we have to declare specific path.",
+      "author": "wario",
+      "id": 10
+    },
+    {
+      "title": "useNavigate with \"/\"",
+      "body": "let's test this!",
+      "author": "wario",
+      "id": 11
     }
   ]
 }

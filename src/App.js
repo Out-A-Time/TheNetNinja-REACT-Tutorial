@@ -3,6 +3,7 @@ import Home from "./Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CreateBlog from "./CreateBlog";
 import BlogDetails from "./BlogDetails";
+import NotFound from "./NotFound";
 
 // App.use(function (req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "http://localhost:8000"); // update to match the domain you will make the request from
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/create" element={<CreateBlog />}></Route>
             <Route path="/blogs/:id" element={<BlogDetails />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
           </Routes>
         </div>
       </div>
